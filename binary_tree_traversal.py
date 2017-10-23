@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-#coding:utf-8
+# coding:utf-8
 
 """
 #问题
@@ -8,7 +8,7 @@
 
 from collections import namedtuple
 from sys import stdout
- 
+
 Node = namedtuple('Node', 'data, left, right')
 tree = Node(1,
             Node(2,
@@ -23,7 +23,7 @@ tree = Node(1,
                  None))
 
 
-#前序（pre-order，NLR）
+# 前序（pre-order，NLR）
 
 def preorder(node):
     if node is not None:
@@ -32,7 +32,7 @@ def preorder(node):
         preorder(node.right)
 
 
-#中序（in-order，LNR）
+# 中序（in-order，LNR）
 
 def inorder(node):
     if node is not None:
@@ -41,7 +41,7 @@ def inorder(node):
         inorder(node.right)
 
 
-#后序（post-order，LRN）
+# 后序（post-order，LRN）
 
 def postorder(node):
     if node is not None:
@@ -50,7 +50,7 @@ def postorder(node):
         print node.data,
 
 
-#层序（level-order）
+# 层序（level-order）
 
 def levelorder(node, more=None):
     if node is not None:
@@ -58,9 +58,10 @@ def levelorder(node, more=None):
             more = []
         more += [node.left, node.right]
         print node.data,
-    if more:    
+    if more:
         levelorder(more[0], more[1:])
- 
+
+
 print '  preorder: ',
 preorder(tree)
 print '\t\n   inorder: ',
